@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+	<title>Player vidéo</title>
+	
+	<link rel="stylesheet" href="css/video.css"/>
+	
+</head>
+
+<body>
+
+<section class="video_contain">
+	<video id="te">
+		<source src="video/video.ogv" type="video/ogg" />	
+		
+	</video>
+	<nav>
+		<button id="play" title="Play/Pause"></button>
+		
+		<div id="duration"><span></span></div>
+		<time>1:20/3:00</time>
+		<input type="range" min="0" max="100" value="50" />
+		
+		<button id="full" title="full screen"></button>
+		<button id="option" title="option"></button>
+	</nav>
+</section>
+
+
+	<!--<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script> 
+	<script>window.jQuery || document.write("<script src='js/jquery.min.js'>\x3C/script>")</script> -->
+	
+	<script src='js/jquery.min.js'></script>
+	<script src="js/video.js"></script>
+	
+</body>
+</html>
