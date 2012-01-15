@@ -3,7 +3,7 @@
 
 <head>
 	<title>Player vidéo</title>
-	
+	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/video.css"/>
 	
 </head>
@@ -13,14 +13,13 @@
 <section class="video_contain">
 	<video id="te">
 		<source src="video/video.ogv" type="video/ogg" />	
-		
 	</video>
 	<nav>
 		<button id="play" title="Play/Pause"></button>
 		
 		<div id="duration"><span></span></div>
 		<time>1:20/3:00</time>
-		<input type="range" min="0" max="100" value="50" />
+		<input type="range" min="0" max="1" value="0.5" step="0.01" id="volume"  />
 		
 		<button id="full" title="full screen"></button>
 		<button id="option" title="option"></button>

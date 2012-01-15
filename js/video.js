@@ -1,24 +1,23 @@
 $(function(){
-	var video = $('video')[0];
-	var play = $('#play');
 	
 	var video = $('video')[0],
 	    play = $('#play'),
-	    position = $('position'),
-	    using = $('using'),
-	    ready = false,
-	    controls = $('controls'),
+	    duration = parseInt(video.duration),
 	    fullscreen = $('#full');
+	    
+	video.volume= $('#volume').val();
 	
 	$(play).click(function(){
 		if (video.paused){
 		  video.play();
-		  this.value = "pause";
-		  console.log(video.duration)
+		  setInterval(update, 100);
 		} else {
 		  video.pause();
-		  this.value = "play";
 		}
+	});
+	
+	$('#volume').change(function() {
+	    video.volume = $(this).val();
 	});
 	
 	if (video.webkitSupportsFullscreen) { 
@@ -29,28 +28,11 @@ $(function(){
 	else{
 		$(fullscreen).hide();
 	}
-	 $('time').html(video.currentTime)
+	
+	function update() {    
+        var t = (video.currentTime/duration)*100;
+        $('#duration span').animate({width: t+"%"}, 100);
+	    $('time').html(parseInt(video.currentTime));
+	 }
 	 
-	/*
-	addEvent(togglePlay, 'click', function () {
-	  if (ready) {
-	    // video.playbackRate = 0.5;
-	    if (video.paused) {
-	      if (video.ended) video.currentTime = 0;
-	      video.play();
-	      this.value = "pause";
-	    } else {
-	      video.pause();
-	      this.value = "play";
-	    }
-	  }
-	});*/
-	
-	/*$(video).hover(function(){
-		$('nav').fadeIn();
-	},
-	function(){
-		$('nav').fadeOut();
-	});*/
-	
 });
