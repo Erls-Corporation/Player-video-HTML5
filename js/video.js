@@ -2,9 +2,10 @@ $(function(){
 	
 	var video = $('video')[0],
 	    play = $('#play'),
-	    duration = parseInt(video.duration),
 	    fullscreen = $('#full');
-	    
+	
+	var duration = parseInt(video.duration);
+	
 	video.volume= $('#volume').val();
 	
 	$(play).click(function(){
